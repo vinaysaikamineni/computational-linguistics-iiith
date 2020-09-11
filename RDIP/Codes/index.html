@@ -75,8 +75,42 @@
                     document.getElementById("inp3").innerHTML = str1; 
                     c=c+1;
                     //console.log(c);
+                    if(c == list.length)
+                        {
+                            var check = document.createElement("input");
+                            check.type="button";
+                            check.value="CHECK SCENTENCE";
+                            var checkbtn = document.getElementById("correct");
+                            checkbtn.appendChild(check);
+                            check.onclick=function()
+                            {
+                                console.log(document.getElementById("inp3").innerHTML);
+                                console.log(rightsen);
+                                if((div1.innerHTML).trim() == (rightsen).trim())
+                                    {    
+                                         document.getElementById("ans.correct").innerHTML = "CORRECT ANSWER";
+                                     }
+                                    else
+                                    {
+                                        document.getElementById("ans.correct").innerHTML = "WRONG ANSWER";
+                                        /*var inc = document.createElement("input");
+                                        inc.type="button";
+                                        inc.value="Show Correct Answer";
+                                        document.getElementById("ans.correct").appendChild(inc);
+                                        inc.onclick=function()
+                                        {
+                                            document.getElementById("ans.correct").innerHTML= rightsen;
+                                        }*/
+                                    }
+                            }
+                        }
+                   /* else
+                        {
+                            document.getElementById("ans-correct").style.display="none";
+                        }*/
                 }
             }
+        //console.log(c);        
         var reform = document.getElementById("inp4");
         var rebtn = document.createElement("input");
         rebtn.type = "button";
@@ -87,6 +121,7 @@
         {
             div1.innerHTML="";
             //div.innerHTML="";
+            document.getElementById("ans-correct").innerHTML ="";
             document.getElementById("sentence-formed").innerHTML = "";
             //document.getElementById("correct").innerHTML = "";
             document.getElementById("ans.correct").innerHTML = "";
