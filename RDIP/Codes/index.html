@@ -12,6 +12,11 @@
     </div>
     <div class="cl2" id="inp2">
     </div>
+    <h3 id="sentence-formed"></h3>
+    <div id="inp3">
+    </div>
+    <div id="inp4">
+    </div>
 </body>
     <script>
     function disp()
@@ -58,7 +63,7 @@
                 div.appendChild(str[k]);
                 str[k].onclick = function()
                 {
-                    document.getElementById("sentence-formed").innerHTML = "SENTENCE FORMED";
+                    document.getElementById("sentence-formed").innerHTML = "<b>Formed scentence(after selecting words)</b>";
                     var part = this.value;
                     str1+=part+" ";
                     console.log(str1);
