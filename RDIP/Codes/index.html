@@ -1,0 +1,22 @@
+<html>
+<body>
+    Select Language:<select id="lan" onchange="disp()">
+        <option>--select language--</option>
+        <option value="english">English</option>
+        <option value = "hindi">Hindi</option>
+    </select><br>
+    <p id="intro">
+    </p>
+</body>
+    <script>
+    function disp()
+    { 
+        document.getElementById("intro").innerHTML = "<b>Form a scentence1(Declarative or Interogative or any other type)from given words</b><br>(select buttons in proper order)";
+        var lang = document.getElementById("lan").value;
+        if( lang == "english"){
+            console.log(lang);
+            
+        }
+    }
+    </script>
+</html>
