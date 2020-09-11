@@ -17,6 +17,10 @@
     </div>
     <div id="inp4">
     </div>
+    <div id="correct">
+    </div>
+    <div id="ans.correct">
+    </div>
 </body>
     <script>
     function disp()
@@ -73,6 +77,26 @@
                     //console.log(c);
                 }
             }
+        var reform = document.getElementById("inp4");
+        var rebtn = document.createElement("input");
+        rebtn.type = "button";
+        rebtn.value="REFORM SCENTENCE";
+        //console.log("HII");
+        div2.appendChild(rebtn);
+        rebtn.onclick=function()
+        {
+            div1.innerHTML="";
+            //div.innerHTML="";
+            document.getElementById("sentence-formed").innerHTML = "";
+            //document.getElementById("correct").innerHTML = "";
+            document.getElementById("ans.correct").innerHTML = "";
+            str1="";
+            for(var l=0;l<list.length;l++)
+                {
+                        str[l].style.display="inline";
+                }
+            c=0;
+        }
             
         }
     }
