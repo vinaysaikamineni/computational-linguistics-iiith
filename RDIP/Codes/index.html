@@ -7,6 +7,11 @@
     </select><br>
     <p id="intro">
     </p>
+    <div class="cl1">
+        <p id="inp"></p>
+    </div>
+    <div class="cl2" id="inp2">
+    </div>
 </body>
     <script>
     function disp()
@@ -14,7 +19,55 @@
         document.getElementById("intro").innerHTML = "<b>Form a scentence1(Declarative or Interogative or any other type)from given words</b><br>(select buttons in proper order)";
         var lang = document.getElementById("lan").value;
         if( lang == "english"){
-            console.log(lang);
+            //console.log(lang);
+            var corpus = "John ate an apple before afternoon  before afternoon John ate an apple  John before afternoon ate an apple   some students like to study in the night  at night some students like to study   John and Mary went to church  Mary and John went to church   John went to church after eating  after eating John went to church  John after eating went to church   did he go to market	 he did go to market   the woman who called my sister sells cosmetics  the woman who sells cosmetics called my sister  my sister who sells cosmetics called the woman  my sister who called the woman sells cosmetics   John goes to the library and studies  John studies and goes to the library   John ate an apple so did she  she ate an apple so did John   the teacher returned the book after she noticed the error  the teacher noticed the error after she returned the book  after the teacher returned the book she noticed the error  after the teacher noticed the error she returned the book  she returned the book after the teacher noticed the error  she noticed the error after the teacher returned the book  after she returned the book the teacher noticed the error  after she noticed the error the teacher returned the book   I told her that I bought a book yesterday  I told her yesterday that I bought a book  yesterday I told her that I bought a book  I bought a book that I told her yesterday  I bought a book yesterday that I told her  yesterday I bought a book that I told her"
+        var sen = corpus.split("   ");
+        var len = sen.length;
+            //console.log(len);
+        var index = Math.floor(Math.random()*len);
+            console.log(index);
+        var eversen =sen[index].split("  ");
+        var list = eversen[0].split(" ");
+        console.log(list);
+        var rightsen = list.join(" ");
+        console.log(rightsen);
+        var ctr = list.length, temp, index;
+        while (ctr > 0)
+        {
+            index = Math.floor(Math.random() * ctr);
+            ctr--;
+            temp = list[ctr];
+            list[ctr] = list[index];
+            list[index] = temp;
+        }
+        var div = document.getElementById("inp2");
+        var div1 = document.getElementById("inp3");
+        var div2 = document.getElementById("inp4");
+        var str=[];
+        for(var l=0;l<list.length;l++)
+            {
+                str.push(0);
+            }
+        var c=0;
+        var str1="";
+        for(var k =0;k<list.length;k++)
+            {
+                str[k] = document.createElement("input");
+                str[k].type ="button";
+                str[k].value = list[k];
+                div.appendChild(str[k]);
+                str[k].onclick = function()
+                {
+                    document.getElementById("sentence-formed").innerHTML = "SENTENCE FORMED";
+                    var part = this.value;
+                    str1+=part+" ";
+                    console.log(str1);
+                    this.style.display="none";
+                    document.getElementById("inp3").innerHTML = str1; 
+                    c=c+1;
+                    //console.log(c);
+                }
+            }
             
         }
     }
