@@ -5,6 +5,7 @@
         <option value="english">English</option>
         <option value = "hindi">Hindi</option>
     </select><br>
+    <div id="page">
     <p id="intro">
     </p>
     <div class="cl1">
@@ -24,12 +25,21 @@
     <div id="ans.correct1">
     </div><br>
     <div id="dis.correct">
-    </div>
+    </div></div>
 </body>
     <script>
     function disp()
-    { 
+    {
+        
         document.getElementById("intro").innerHTML = "<b>Form a scentence1(Declarative or Interogative or any other type)from given words</b><br>(select buttons in proper order)";
+        document.getElementById("inp").innerHTML="";
+        document.getElementById("inp2").innerHTML="";
+        document.getElementById("inp3").innerHTML="";
+        document.getElementById("inp4").innerHTML="";
+        document.getElementById("correct").innerHTML="";
+        document.getElementById("ans.correct").innerHTML="";
+        document.getElementById("ans.correct1").innerHTML="";
+        document.getElementById("dis.correct").innerHTML="";
         var lang = document.getElementById("lan").value;
         if( lang == "english"){
             //console.log(lang);
@@ -137,10 +147,10 @@
         div2.appendChild(rebtn);
         rebtn.onclick=function()
         {
+            alert(c+" words are selected");
             div1.innerHTML="";
             c=0;
             //div.innerHTML="";
-            document.getElementById("ans.correct").innerHTML ="";
             document.getElementById("sentence-formed").innerHTML = "";
             //document.getElementById("correct").innerHTML = "";
             document.getElementById("ans.correct1").innerHTML = "";
